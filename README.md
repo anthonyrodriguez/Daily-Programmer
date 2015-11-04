@@ -1,2 +1,2 @@
 # Daily-Programmer
-Daily(ish) programming challenges from www.reddit.com/r/dailyprogrammer
+Daily-ish programming challenges from www.reddit.com/r/dailyprogrammer
