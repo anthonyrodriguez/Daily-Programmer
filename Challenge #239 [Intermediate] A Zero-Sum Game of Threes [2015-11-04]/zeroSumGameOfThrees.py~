@@ -1,4 +1,31 @@
 import sys
+import pdb
+
+def threeRecurse(num, stepList):
+	if num == 1:
+		if sum([x[1] for x in stepList]) == 0:
+			for item in stepList:
+				print "{0} {1}".format(item[0], item[1])
+			return True
+		return False
+
+	if num < 1:
+		return False
+
+	if num % 3 == 0:
+		if threeRecurse(num / 3, stepList + [(num, 0)]):
+			return True
+	if (num + 1) % 3 == 0:
+		if threeRecurse( (num + 1) / 3, stepList + [(num, 1)]):
+			return True
+		if threeRecurse( (num - 2) / 3, stepList + [(num, -2)]):
+			return True
+	if (num - 1) % 3 == 0:
+		if threeRecurse( (num - 1) / 3, stepList + [(num, -1)]):
+			return True
+		if threeRecurse( (num + 2) / 3, stepList + [(num, 2)]):
+			return True
+	return False
 
 try:
 	start = int(sys.argv[1])
@@ -7,19 +34,7 @@ try:
 except:
 	raise TypeError('Argument should be a positive integer!')
 
-while start > 1:
-	if start % 3 == 0:
-		print "{} 0".format(start)
-		start = start/3
-	elif (start + 1) % 3 == 0:
-		print "{} 1".format(start)
-		start = (start + 1)/3
-	else:
-		print "{} -1".format(start)
-		start = (start-1)/3
-
-assert start == 1
-print "1"
+if not threeRecurse(start, []):
+	print "Impossible."
 
 
-def threeRecurse
