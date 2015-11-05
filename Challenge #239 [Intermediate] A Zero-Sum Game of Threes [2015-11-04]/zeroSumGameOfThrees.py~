@@ -6,6 +6,8 @@ def threeRecurse(num, stepList):
 		if sum([x[1] for x in stepList]) == 0:
 			for item in stepList:
 				print "{0} {1}".format(item[0], item[1])
+			print "1"
+			print "sum: {}".format(sum([x[1] for x in stepList]))
 			return True
 		return False
 
