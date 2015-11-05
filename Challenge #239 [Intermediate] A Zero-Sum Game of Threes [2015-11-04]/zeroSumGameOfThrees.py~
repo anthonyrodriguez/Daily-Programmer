@@ -1,0 +1,25 @@
+import sys
+
+try:
+	start = int(sys.argv[1])
+	if start < 1:
+		raise ValueError('Argument must be greater than zero!')
+except:
+	raise TypeError('Argument should be a positive integer!')
+
+while start > 1:
+	if start % 3 == 0:
+		print "{} 0".format(start)
+		start = start/3
+	elif (start + 1) % 3 == 0:
+		print "{} 1".format(start)
+		start = (start + 1)/3
+	else:
+		print "{} -1".format(start)
+		start = (start-1)/3
+
+assert start == 1
+print "1"
+
+
+def threeRecurse
